@@ -6,6 +6,12 @@ RiftDeck is an independent, Steam-inspired platform designed to provide a polish
 
 **Status:** Pre-alpha — planning and architecture.
 
+## Upstream foundation
+
+RiftDeck starts from the **Katsugachi/Solus-MS launcher** as a version-pinned reference and prospective migration base, not a from-scratch clone. The upstream source is at commit [`3b4c652`](https://github.com/Katsugachi/Solus-MS/commit/3b4c652f78b7df347000b17ddc7134896d2840d8) (8 November 2026), under a repository-level Apache-2.0 licence. Launcher-code reuse requires appropriate attribution, and embedded third-party game ports and assets have separate rights considerations.
+
+See [upstream baseline and import gates](docs/UPSTREAM_SOLUS.md) and the [project brief](docs/PROJECT_BRIEF.md). The upstream snapshot is **documented but not yet copied into RiftDeck**; a source, licence and integration audit comes first.
+
 ## Vision
 
 Build a sophisticated web gaming ecosystem that runs in modern browsers without requiring administrator installation.
@@ -43,7 +49,7 @@ RiftDeck aims to combine:
 - Modular game adapters
 - Automated testing and GitHub Actions
 
-The final architecture may change following feasibility analysis.
+The final architecture may change after examining the current Solus-MS code and the risks of an immediate framework migration.
 
 ## Development roadmap
 
