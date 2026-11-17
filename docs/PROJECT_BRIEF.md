@@ -6,6 +6,14 @@ Build an original, high-quality browser-native gaming platform with a Steam-insp
 
 The product should operate efficiently on ordinary desktop hardware without requiring administrator installation.
 
+## 1A. Upstream baseline and migration strategy
+
+**Baseline:** [Katsugachi/Solus-MS](https://github.com/Katsugachi/Solus-MS) at commit `3b4c652f78b7df347000b17ddc7134896d2840d8` (last observed update 2026-11-08). The repository's declared licence is Apache-2.0.
+
+RiftDeck should evolve from the current Solus-MS launcher rather than discard its existing features. First audit the upstream code and third-party game licensing, then selectively port or adapt suitable launcher functionality. Source imports require attribution, provenance and tests; the project-level licence does not automatically cover every external game, image or port.
+
+Read [UPSTREAM_SOLUS.md](UPSTREAM_SOLUS.md) for the pinned baseline, known architecture, constraints and acceptance gates. The first engineering milestone is an upstream audit and viable migration strategy—not a blind bulk import.
+
 ## 2. Product priorities
 
 ### P0 — Essential
@@ -59,7 +67,7 @@ Do not claim that the platform can erase browser history or evade managed-device
 
 ## 4. Architecture
 
-Preferred initial stack:
+Preferred implementation stack **subject to an upstream migration assessment**:
 
 - React + TypeScript
 - Vite
