@@ -1,0 +1,3 @@
+[submodule "solus-ms"]
+	path = upstream/solus-ms
+	url = https://github.com/austin-intel/Solus-MS.git

@@ -8,11 +8,11 @@ The product should operate efficiently on ordinary desktop hardware without requ
 
 ## 1A. Upstream baseline and migration strategy
 
-**Baseline:** [Katsugachi/Solus-MS](https://github.com/Katsugachi/Solus-MS) at commit `3b4c652f78b7df347000b17ddc7134896d2840d8` (last observed update 2026-11-08). The repository's declared licence is Apache-2.0.
+**Baseline** · [Katsugachi/Solus-MS](https://github.com/Katsugachi/Solus-MS) at commit [`891144b`](https://github.com/Katsugachi/Solus-MS/commit/891144ba6f86c4f12b9bc3ef6006efb378a84302). The repository declares Apache-2.0.
 
-RiftDeck should evolve from the current Solus-MS launcher rather than discard its existing features. First audit the upstream code and third-party game licensing, then selectively port or adapt suitable launcher functionality. Source imports require attribution, provenance and tests; the project-level licence does not automatically cover every external game, image or port.
+RiftDeck checks out the complete baseline in `upstream/solus-ms`. Audit the upstream code and third-party game licensing before adapting launcher features. Source adaptations require attribution, provenance and tests. Review external games, images and ports individually before redistribution.
 
-Read [UPSTREAM_SOLUS.md](UPSTREAM_SOLUS.md) for the pinned baseline, known architecture, constraints and acceptance gates. The first engineering milestone is an upstream audit and viable migration strategy—not a blind bulk import.
+Read [UPSTREAM_SOLUS.md](UPSTREAM_SOLUS.md) for the exact source, known architecture and deployment scope.
 
 ## 2. Product priorities
 
