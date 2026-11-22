@@ -1,27 +1,20 @@
 # Upstream Baseline — Katsugachi/Solus-MS
 
-**Status:** Pinned research and migration reference; source has **not** been imported into RiftDeck yet.
+The complete original source is available through the `upstream/solus-ms` Git submodule. It sits outside the `docs/` folder served by RiftDeck’s project site.
 
 ## Exact source
 
-- Repository: https://github.com/Katsugachi/Solus-MS
-- Default branch: `main`
-- Pinned commit: `3b4c652f78b7df347000b17ddc7134896d2840d8`
-- Commit URL: https://github.com/Katsugachi/Solus-MS/commit/3b4c652f78b7df347000b17ddc7134896d2840d8
-- Latest observed upstream push: **2026-11-08 06:22:03 UTC**
-- Snapshot selected for RiftDeck: **2026-11-17** (the latest verified upstream commit on that date)
-- Project-level declared licence: **Apache License 2.0**; see https://github.com/Katsugachi/Solus-MS/blob/3b4c652f78b7df347000b17ddc7134896d2840d8/LICENSE
-- README: https://github.com/Katsugachi/Solus-MS/blob/3b4c652f78b7df347000b17ddc7134896d2840d8/README.md
+- [Original repository](https://github.com/Katsugachi/Solus-MS) and [Austin’s fork](https://github.com/austin-intel/Solus-MS)
+- [Pinned commit `891144ba6f86c4f12b9bc3ef6006efb378a84302`](https://github.com/Katsugachi/Solus-MS/commit/891144ba6f86c4f12b9bc3ef6006efb378a84302), at the head of both repositories’ `main` branches when selected on 23 November 2026 (Sydney time)
+- [Upstream Apache-2.0 licence](https://github.com/Katsugachi/Solus-MS/blob/891144ba6f86c4f12b9bc3ef6006efb378a84302/LICENSE) and [README](https://github.com/Katsugachi/Solus-MS/blob/891144ba6f86c4f12b9bc3ef6006efb378a84302/README.md)
 
-Pin the above SHA for initial investigation. Later upstream changes require explicit comparison and a new documented decision; do not silently track the moving head of `main`.
+After cloning RiftDeck, run `git submodule update --init --recursive` to fetch the pinned sources. The original [`3b4c652`](https://github.com/Katsugachi/Solus-MS/commit/3b4c652f78b7df347000b17ddc7134896d2840d8) research pin remains part of the project history. Record and review any future submodule pin changes.
 
 ## Observed architecture
 
-The repository has **68 root entries**, consisting of **33 HTML files**, **33 image/icon files**, `README.md` and `LICENSE`, with no directories in the observed root listing. The main `index.html` is approximately **157 KB** and contains a largely monolithic HTML/CSS/JavaScript launcher.
+Upstream has a mostly monolithic HTML/CSS/JavaScript launcher, game wrappers and images, and a service worker. Its README describes a searchable library, themes, local persistence, statistics and a mobile UI. Some wrappers load remote resources and some files bundle substantial third-party content. Review each game and asset separately before republishing it.
 
-The upstream README describes a searchable web-game library, themes and local-storage persistence, statistics, game wrappers/iframes, mobile UI and browser-specific session options. Individual HTML game wrappers may reference substantial third-party assets hosted elsewhere. This means the repository's size, Apache licence and browser-native form do **not** establish that all included game ports, images or remote binaries are ours to redistribute.
-
-The present `index.html` begins with an origin allowlist for specified upstream deployments, and includes third-party analytics. These and all external destinations need a security/privacy audit before importing or deploying altered code. The README's local Python-server instructions may conflict with its origin allowlist; do not assert untested local compatibility.
+Upstream’s entry page restricts runtime to listed deployment origins, displays a request against deploying Solus MS forks to GitHub Pages, and includes third-party analytics. RiftDeck’s current Pages site serves its own project landing page and links to the authorised upstream launcher.
 
 ## RiftDeck development decision
 
@@ -39,9 +32,9 @@ Suggested feature parity and migration inventory:
 
 **Excluded from unreviewed imports:** third-party game packages and images without verified rights; unwanted third-party tracking; origin-based deployment restrictions; methods intended to bypass school/device monitoring, masquerade as schoolwork, or make misleading privacy promises.
 
-## Import acceptance gate
+## Migration acceptance gate
 
-Before importing original code, the implementation agent must:
+Before incorporating upstream code into the RiftDeck app:
 
 - [ ] Record the upstream SHA and changed files (no ambiguity about provenance).
 - [ ] Inspect launcher `index.html` and dependencies, including remote URLs, external scripts and game content.
@@ -53,7 +46,7 @@ Before importing original code, the implementation agent must:
 
 ## Build sequencing
 
-**Phase A — baseline audit:** Source review, licence manifest and migration matrix. No blind copy or site deployment.
+**Phase A — baseline audit:** Review the pinned source, build a licence manifest and map features for migration.
 
 **Phase B — compatible foundation:** Scaffold the RiftDeck application and migrate reviewed game-library functionality with tests. A justified incremental HTML-first approach is acceptable if React conversion would create unnecessary regression risk.
 

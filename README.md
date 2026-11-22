@@ -4,13 +4,25 @@
 
 RiftDeck is an independent, Steam-inspired platform designed to provide a polished gaming library, reliable session management, privacy-conscious features, and connected gaming experiences.
 
-**Status:** Pre-alpha — planning and architecture.
+**Status** · Pre-alpha. The source baseline and project site are set up. The RiftDeck launcher is in development.
+
+[Open RiftDeck](https://austin-intel.github.io/RiftDeck/) · [Foundation milestone](https://github.com/austin-intel/RiftDeck/issues/1)
 
 ## Upstream foundation
 
-RiftDeck starts from the **Katsugachi/Solus-MS launcher** as a version-pinned reference and prospective migration base, not a from-scratch clone. The upstream source is at commit [`3b4c652`](https://github.com/Katsugachi/Solus-MS/commit/3b4c652f78b7df347000b17ddc7134896d2840d8) (8 November 2026), under a repository-level Apache-2.0 licence. Launcher-code reuse requires appropriate attribution, and embedded third-party game ports and assets have separate rights considerations.
+RiftDeck starts from [Katsugachi’s Solus MS](https://github.com/Katsugachi/Solus-MS), pinned to [`891144b`](https://github.com/Katsugachi/Solus-MS/commit/891144ba6f86c4f12b9bc3ef6006efb378a84302). The `upstream/solus-ms` submodule checks out the complete upstream source from [Austin’s fork](https://github.com/austin-intel/Solus-MS). Use it as the baseline for reviewing and migrating launcher features.
 
-See [upstream baseline and import gates](docs/UPSTREAM_SOLUS.md) and the [project brief](docs/PROJECT_BRIEF.md). The upstream snapshot is **documented but not yet copied into RiftDeck**; a source, licence and integration audit comes first.
+See the [upstream notes](docs/UPSTREAM_SOLUS.md) and [project brief](docs/PROJECT_BRIEF.md).
+
+## Run the project site locally
+
+```sh
+git clone --branch work/foundation --recurse-submodules https://github.com/austin-intel/RiftDeck.git
+cd RiftDeck
+python -m http.server 8000 --bind 127.0.0.1 --directory docs
+```
+
+Open <http://127.0.0.1:8000/>. GitHub Pages serves the same static files from `docs/`. To populate the Solus MS source in an existing clone, run `git submodule update --init --recursive`. The full upstream checkout is intended for development and is outside the Pages publishing folder.
 
 ## Vision
 
@@ -81,4 +93,4 @@ Do not overwrite stable releases or remove historical evidence without explicit 
 
 RiftDeck is an independent project. Referenced third-party platforms are design inspiration only. Game assets and external software must have appropriate distribution rights.
 
-A project licence will be selected before public release.
+Solus MS is by Katsugachi and declares Apache-2.0. Its original licence and credits are preserved in the pinned source checkout. Third-party game packages and assets require their own redistribution review.

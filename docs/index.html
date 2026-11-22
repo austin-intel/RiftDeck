@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RiftDeck is an independent browser gaming platform in development, based on Katsugachi’s Solus MS.">
+  <title>RiftDeck</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font: 100%/1.6 system-ui, sans-serif;
+      background: #11141e;
+      color: #f4f5fd;
+      --muted: #b0bacf;
+      --accent: #b8ff7c;
+      --border: #353d56;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 85% 4%, #273750, transparent 55%);
+    }
+    .wrap { width: min(68rem, calc(100% - 3rem)); margin-inline: auto; }
+    header, footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; }
+    header { padding-block: 1.4rem; border-bottom: 1px solid var(--border); }
+    .brand { font-weight: 850; letter-spacing: -.035em; font-size: 1.2rem; }
+    .brand::before { content: ""; display: inline-block; width: .65em; height: .65em; margin-right: .55em; background: var(--accent); transform: rotate(-12deg); }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    .hero { padding-block: clamp(3.5rem, 10vw, 8rem) clamp(3rem, 7vw, 5.5rem); }
+    .status { margin: 0 0 .75rem; color: var(--accent); font-weight: 650; }
+    h1 { margin: 0; font-size: clamp(3.5rem, 12vw, 8.75rem); line-height: .99; letter-spacing: -.085em; }
+    .hero p:last-child { max-width: 42rem; margin-block: 1.55rem 0; font-size: clamp(1.15rem, 2.4vw, 1.45rem); color: var(--muted); }
+    .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 1rem; }
+    article { background: #1b2131; border: 1px solid var(--border); border-radius: 1rem; padding: clamp(1.4rem, 4vw, 2rem); }
+    h2 { margin: 0; font-size: 1.55rem; letter-spacing: -.03em; }
+    article p { color: var(--muted); margin: .5rem 0 1.25rem; }
+    article a { font-weight: 700; }
+    footer { margin-top: clamp(3rem, 8vw, 6rem); padding-block: 1.25rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <span class="brand" aria-label="RiftDeck">RiftDeck</span>
+    <a href="https://github.com/austin-intel/RiftDeck">GitHub repository</a>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <p class="status">In development</p>
+      <h1 id="title">RiftDeck</h1>
+      <p>A browser gaming hub in development. We’re starting from Katsugachi’s Solus MS and working towards a searchable library, accessible navigation and local-first settings.</p>
+    </section>
+    <section class="links" aria-label="Project links">
+      <article>
+        <h2>Play Solus MS</h2>
+        <p>Open the original game library on Katsugachi’s site.</p>
+        <a href="https://katsugachi.github.io/Solus-MS/">Open the original launcher</a>
+      </article>
+      <article>
+        <h2>Follow RiftDeck</h2>
+        <p>Track the work on RiftDeck’s first playable build.</p>
+        <a href="https://github.com/austin-intel/RiftDeck/issues/1">View the foundation milestone</a>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap">
+    <span>RiftDeck is an independent project.</span>
+    <a href="https://github.com/Katsugachi/Solus-MS">Solus MS by Katsugachi</a>
+  </footer>
+</body>
+</html>
